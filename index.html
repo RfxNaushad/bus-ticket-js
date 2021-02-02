@@ -63,19 +63,19 @@
                 <div class="input-group f-class">
                 <div>
                     <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="" value="0">
+                    <input id="firstclass-input" class="inp-style inp-width" type="number" name="" value="0">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <span>+</span> <span class="minus_btn">-</span> </p>
+                    <p> <span id="firstclass-increment">+</span> <span class="minus_btn" id="firstclass-decrement">-</span> </p>
                 </div>
             </div>
                 <div class="input-group f-class">
                     <div>
                         <label for="">Economy ($100)</label>
-                        <input class="inp-style inp-width" type="number" name="" value="0">
+                        <input id="economy-input"  class="inp-style inp-width" type="number" name="" value="0">
                     </div>
                     <div class="plus-minus-btn">
-                        <p> <span>+</span> <span class="minus_btn">-</span> </p>
+                        <p> <span id="economy-increment">+</span> <span class="minus_btn" id="economy-decrement">-</span> </p>
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$<span>00</span></p>
+                        <p>$<span id="subtotal-ticket-price">00</span></p>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$<span>00</span></p>
+                        <p>$<span id="vat-ticket-price">00</span></p>
                     </div>
                 </div>
                 <hr>
@@ -104,11 +104,11 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$<span>00</span></p>
+                        <p>$<span id="total-ticket-price">00</span></p>
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="book-now" class="btn-style">Book Now</button>
         </div>
     </main>
 

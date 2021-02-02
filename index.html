@@ -52,11 +52,11 @@
             <div class="inputs">
                 <div class="input-group">
                     <label" for="">Departure</label>
-                    <input class="inp-style" type="date" name="" value="0">
+                    <input class="inp-style" type="date" name="">
                 </div>
                 <div class="input-group">
                     <label for="">Return</label>
-                    <input class="inp-style" type="date" name="" value="0">
+                    <input class="inp-style" type="date" name="">
                 </div>
             </div>
             <div class="inputs">
@@ -113,7 +113,192 @@
     </main>
 
     <script>
+        // First Class Ticket Increase
+        const firstClassIncrement = document.getElementById("firstclass-increment").addEventListener("click",
+        function () {
+            const ticketInput = document.getElementById("firstclass-input");
+            const ticketCount = parseInt(ticketInput.value);
+            const ticketNewCount = ticketCount + 1;
+            ticketInput.value = ticketNewCount;
+            document.getElementById("firstclass-input").innerText = ticketNewCount;
 
+
+            // calaulation ticket for increase
+            totalPriceCalculations(); //function declared for total calculation
+
+                //For SubTotal
+                // const subTotalFirstClass = document.getElementById("subtotal-ticket-price").innerText;
+                // const subTotal = parseInt(subTotalFirstClass);
+                // const ticketTotal = (ticketNewCount * 150);
+                // document.getElementById("subtotal-ticket-price").innerText =  ticketTotal;
+
+                // //For Vat
+                // const vatFirstClass = document.getElementById("vat-ticket-price").innerText;
+                // const vat = parseInt(vatFirstClass);
+                // const vatTotal = (ticketTotal * 0.1);
+                // document.getElementById("vat-ticket-price").innerText = vatTotal;
+                
+                // //For Total
+                // const totalFirstClass = document.getElementById("total-ticket-price").innerText;
+                // const totalAmount = parseInt(totalFirstClass);
+                // const total = ticketTotal + vatTotal;
+                // document.getElementById("total-ticket-price").innerText = total;
+
+            
+
+        })
+
+        // First Class Ticket Decrease
+        const firstClassDecrement = document.getElementById("firstclass-decrement").addEventListener("click",
+        function () {
+            const ticketInput = document.getElementById("firstclass-input");
+            const ticketCount = parseInt(ticketInput.value);
+            // const ticketNewCount = ticketCount;
+            if (ticketCount > 0) {
+                const ticketNewCount = ticketCount - 1;
+                ticketInput.value = ticketNewCount;
+                document.getElementById("firstclass-input").innerText = ticketNewCount;
+
+                // calaulation ticket for decrease 
+                totalPriceCalculations(); //function declared for total calculation
+
+                // //For SubTotal
+                // const subTotalFirstClass = document.getElementById("subtotal-ticket-price").innerText;
+                // const subTotal = parseInt(subTotalFirstClass);
+                // const ticketTotal = (ticketNewCount * 150);
+                // document.getElementById("subtotal-ticket-price").innerText =  ticketTotal;
+                // //For Vat
+                // const vatFirstClass = document.getElementById("vat-ticket-price").innerText;
+                // const vat = parseInt(vatFirstClass);
+                // const vatTotal = (ticketTotal * 0.1);
+                // document.getElementById("vat-ticket-price").innerText = vatTotal;
+                // //For Total
+                // const totalFirstClass = document.getElementById("total-ticket-price").innerText;
+                // const totalAmount = parseInt(totalFirstClass);
+                // const total = ticketTotal + vatTotal;
+                // document.getElementById("total-ticket-price").innerText = total;
+
+
+                
+            }
+
+        })
+
+        // Economy Ticket Increase
+        const economyIncrement = document.getElementById("economy-increment").addEventListener("click", function () {
+            const ticketInput = document.getElementById("economy-input");
+            const ticketCount = parseInt(ticketInput.value);
+            const ticketNewCount = ticketCount + 1;
+            ticketInput.value = ticketNewCount;
+            document.getElementById("economy-input").innerText = ticketNewCount;
+
+            // calaulation ticket for increase 
+
+             totalPriceCalculations(); //function declared for total calculation
+
+            // //For SubTotal
+            // const subTotalFirstClass = document.getElementById("subtotal-ticket-price").innerText;
+            // const subTotal = parseInt(subTotalFirstClass);
+            // const ticketTotal = (ticketNewCount * 100);
+            // document.getElementById("subtotal-ticket-price").innerText =  ticketTotal;
+
+            // //For Vat
+            // const vatFirstClass = document.getElementById("vat-ticket-price").innerText;
+            // const vat = parseInt(vatFirstClass);
+            // const vatTotal = (ticketTotal * 0.1);
+            // document.getElementById("vat-ticket-price").innerText = vatTotal;
+
+            // //For Total
+            // const totalFirstClass = document.getElementById("total-ticket-price").innerText;
+            // const totalAmount = parseInt(totalFirstClass);
+            // const total = ticketTotal + vatTotal;
+            // document.getElementById("total-ticket-price").innerText = total;
+            
+
+        })
+
+        // Economy Ticket Decrease
+        const economyClassDecrement = document.getElementById("economy-decrement").addEventListener("click",
+        function () {
+            const ticketInput = document.getElementById("economy-input");
+            const ticketCount = parseInt(ticketInput.value);
+            // const ticketNewCount = ticketCount;
+            if (ticketCount > 0) {
+                const ticketNewCount = ticketCount - 1;
+                ticketInput.value = ticketNewCount;
+                document.getElementById("economy-input").innerText = ticketNewCount;
+
+                // calaulation ticket for decrease 
+
+                 totalPriceCalculations(); //function declared for total calculation
+
+                // //For SubTotal
+                // const subTotalFirstClass = document.getElementById("subtotal-ticket-price").innerText;
+                // const subTotal = parseInt(subTotalFirstClass);
+                // const ticketTotal = (ticketNewCount * 100);
+                // document.getElementById("subtotal-ticket-price").innerText =  ticketTotal;
+                // // //For Vat
+                // const vatFirstClass = document.getElementById("vat-ticket-price").innerText;
+                // const vat = parseInt(vatFirstClass);
+                // const vatTotal = (ticketTotal * 0.1);
+                // document.getElementById("vat-ticket-price").innerText = vatTotal;
+
+                // // //For Total
+                // const totalFirstClass = document.getElementById("total-ticket-price").innerText;
+                // const totalAmount = parseInt(totalFirstClass);
+                // const total = ticketTotal + vatTotal;
+                // document.getElementById("total-ticket-price").innerText = total;
+                
+            }
+        })
+
+        // function for total ticket price calcultaions
+
+        function totalPriceCalculations() {
+            const firstClassCount = getInputValue('firstclass');
+            const economyCount = getInputValue('economy');
+            //for sub total
+            const totalPrice = firstClassCount * 150 + economyCount * 100;
+            document.getElementById('subtotal-ticket-price').innerText = totalPrice;
+            //for vat
+            const vat = Math.round(totalPrice * 0.1);
+            document.getElementById('vat-ticket-price').innerText = vat;
+            //for final total
+            const finalTotal = totalPrice + vat;
+            document.getElementById('total-ticket-price').innerText = finalTotal;
+
+        }
+
+        // to get the input values from each id
+
+        function getInputValue(ticket) {
+            const ticketInput = document.getElementById(ticket + '-input');
+            const ticketCount = parseInt(ticketInput.value);
+            return ticketCount;
+        }
+
+        // Bonus part Book Now Button
+
+        const bookBtn = document.getElementById("book-now");
+        bookBtn.addEventListener("click", function(){
+
+            //To Hide The Booking Content
+            const bookingContent = document.getElementById("booking-content");
+            bookingContent.style.display = "none";
+            //To Display Bonus Part
+            const orderComplete = document.getElementById("order-complete");
+            orderComplete.style.display ="block";
+
+
+            //  resetting the ticket form
+            document.getElementById("subtotal-ticket-price").innerText = "00";
+            document.getElementById("vat-ticket-price").innerText = "00";
+            document.getElementById("total-ticket-price").innerText = "00";
+            
+            // resetting the ticket input field
+            document.getElementById("firstclass-input").value = 0;
+            document.getElementById("economy-input").value = 0;
+        })
     </script>
 
     <!--Thank You-->

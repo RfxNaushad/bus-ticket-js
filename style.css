@@ -122,6 +122,17 @@ nav ul li a:hover, a.active{
     font-weight: 500;
     background-color:  #52AF3A;
 }
+.order_complete{
+    color: black;
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    box-shadow: 0px 0px 30px deepskyblue;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 12px;
+    display: none;
+}
 .amount{
     display: flex;
     justify-content: space-between;

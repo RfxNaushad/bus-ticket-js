@@ -29,7 +29,11 @@
     <!--Booking Section-->
     <main class="main-content container">
 
-        <div class="booking-content">
+        <div id="order-complete" class="order_complete">
+            <h1 class="order_complete_h">Thanks for purchasing ticket</h1>
+        </div>
+
+        <div id="booking-content" class="booking-content">
             <h1>Mega City Bus</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
         </div>
@@ -110,6 +114,7 @@
             </div>
             <button id="book-now" class="btn-style">Book Now</button>
         </div>
+
     </main>
 
     <script>
@@ -277,7 +282,7 @@
             return ticketCount;
         }
 
-        // Bonus part Book Now Button
+        // Book Now Button
 
         const bookBtn = document.getElementById("book-now");
         bookBtn.addEventListener("click", function(){
@@ -301,7 +306,6 @@
         })
     </script>
 
-    <!--Thank You-->
 </body>
 
 
